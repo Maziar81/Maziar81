@@ -8,9 +8,7 @@ I’m a **University of Toronto student** passionate about software development,
 
 Here are some of my coding metrics:
 
-![GitHub Metrics](https://github.com/maziar81/maziar81/raw/main/metrics.svg)
-
-> Generated using the [Lowlighter GitHub Metrics](https://github.com/lowlighter/metrics) terminal template.
+![GitHub Metrics](https://github.com/maziar81/maziar81/raw/main/main.svg)
 
 ---
 
