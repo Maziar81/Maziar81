@@ -1,28 +1,24 @@
 name: Generate GitHub Metrics
 
-# Run daily and manually
 on:
   schedule:
-    - cron: '0 0 * * *' # every day at midnight UTC
+    - cron: '0 0 * * *' # daily
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Generate GitHub metrics
       - name: Metrics embed
         uses: lowlighter/metrics@v3.34
         with:
-          github_token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.TOKEN }}   
           template: terminal
-          output_file: main.svg   # <-- your new filename
+          filename: main.svg                   
 
-      # Step 3: Commit and push metrics.svg
       - name: Commit metrics
         run: |
           git config --local user.name "github-actions[bot]"
