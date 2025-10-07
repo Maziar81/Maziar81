@@ -2,7 +2,7 @@ name: Generate GitHub Metrics
 
 on:
   schedule:
-    - cron: '0 0 * * *' # daily
+    - cron: '0 0 * * *' # Runs once a day at midnight UTC
   workflow_dispatch:
 
 jobs:
@@ -16,17 +16,17 @@ jobs:
       - name: Generate GitHub Metrics
         uses: lowlighter/metrics@v3.34
         with:
-          token: ${{ secrets.MY_TOKEN }}
+          token: ${{ secrets.MY_TOKEN }}   # Your personal access token
           template: terminal
-          filename: main.svg            
-          base: header, repositories
-          config_timezone: America/Toronto
+          filename: main.svg               # Output file in root
+          user: Maziar81                   # Your GitHub username
 
       - name: Commit and push metrics
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git pull --rebase origin main
           git add main.svg
           git commit -m "Update GitHub metrics" || echo "No changes to commit"
-          git push
-
+          git push origin main
