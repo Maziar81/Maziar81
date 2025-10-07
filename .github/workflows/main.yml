@@ -23,6 +23,7 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          cp metrics_renders/main.svg ./main.svg
           git add main.svg
           git commit -m "Update GitHub metrics" || echo "No changes to commit"
           git push
