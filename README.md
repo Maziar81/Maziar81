@@ -1,4 +1,4 @@
-# Hi there 👋, I'm Maziar
+# Ayo, I'm Maz
 
 I’m a **University of Toronto student** passionate about software development, building automation tools, and exploring creative solutions to problems.
 
